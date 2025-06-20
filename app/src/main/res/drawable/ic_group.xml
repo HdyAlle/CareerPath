@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#B5B5C3"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M7,17c0-2,4-2,4-2s4,0,4,2v1H7v-1zm-3,1v-1c0-2,4-2,4-2m6,0s4,0,4,2v1"/>
+    <!-- Ganti <circle> dengan <path> membentuk lingkaran di (12,9) dengan radius 3 -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#B5B5C3"
+        android:strokeWidth="1.5"
+        android:pathData="M12,6
+            a3,3 0 1,0 0,6
+            a3,3 0 1,0 0,-6"/>
+</vector>

@@ -1,0 +1,79 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Bottom Navigation Container -->
+    <LinearLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_bottom_nav"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:tag="home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            app:tint="#0056D6"
+            android:contentDescription="@string/home"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/nav_search"
+            android:tag="search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search"
+            app:tint="#8E98A7"
+            android:contentDescription="@string/search"
+            android:padding="8dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/nav_message"
+            android:tag="message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_message"
+            app:tint="#8E98A7"
+            android:contentDescription="@string/message"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/nav_profile"
+            android:tag="profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_user"
+            app:tint="#8E98A7"
+            android:contentDescription="@string/profile"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- Floating Button -->
+    <ImageView
+        android:id="@+id/nav_add"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ic_add_circle"
+        android:background="@drawable/bg_add_circle"
+        android:contentDescription="@string/add"
+        android:elevation="8dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="18dp"
+        android:clickable="false"
+        android:focusable="false"/>
+</FrameLayout>
