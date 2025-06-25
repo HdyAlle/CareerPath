@@ -29,5 +29,6 @@
             android:name=".LoginActivity"
             android:exported="true" />
         <activity android:name=".SearchActivity"/>
+        <activity android:name=".ProfileActivity"/>
     </application>
 </manifest>
