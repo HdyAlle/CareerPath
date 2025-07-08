@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:fillViewport="true"
+    tools:context=".activities.AddJobActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ✅ Enhanced Header with timestamp info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back to main screen"
+                android:layout_marginEnd="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Job"
+                    android:textColor="#222"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- ✅ Current session info for user Arsieruuu -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Creating job for Arsieruuu • 16:29 UTC"
+                    android:textColor="#666"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ✅ Job Name Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Job Name"
+            android:textColor="#222"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_job_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Build Landing Page"
+            android:textColorHint="#999"
+            android:paddingHorizontal="16dp"
+            android:textSize="14sp"
+            android:textColor="#222"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:layout_marginBottom="20dp" />
+
+        <!-- ✅ Institution Name Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Institution name"
+            android:textColor="#222"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_institution_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="PT. Bimtek Tech"
+            android:textColorHint="#999"
+            android:paddingHorizontal="16dp"
+            android:textSize="14sp"
+            android:textColor="#222"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:layout_marginBottom="20dp" />
+
+        <!-- ✅ Field of Study Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Field of study"
+            android:textColor="#222"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_field_of_study"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Senior High School"
+            android:textColorHint="#999"
+            android:paddingHorizontal="16dp"
+            android:textSize="14sp"
+            android:textColor="#222"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:layout_marginBottom="20dp" />
+
+        <!-- ✅ Salary Field with currency support -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salary"
+            android:textColor="#222"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_edit_text"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textColor="#666"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="16dp"
+                android:paddingEnd="4dp" />
+
+            <EditText
+                android:id="@+id/et_salary"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="200"
+                android:textColorHint="#999"
+                android:paddingEnd="16dp"
+                android:textSize="14sp"
+                android:textColor="#222"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:imeOptions="actionNext" />
+
+        </LinearLayout>
+
+        <!-- ✅ Description Field with character counter -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Description"
+                android:textColor="#222"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_char_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/500"
+                android:textColor="#999"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Write additional information here..."
+            android:textColorHint="#999"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:textSize="14sp"
+            android:textColor="#222"
+            android:gravity="top"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="500"
+            android:imeOptions="actionDone"
+            android:layout_marginBottom="40dp" />
+
+        <!-- ✅ Enhanced Action Buttons with better styling -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_remove"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="REMOVE"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_secondary"
+                android:layout_marginEnd="12dp"
+                android:elevation="2dp"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="SUBMIT"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_primary"
+                android:layout_marginStart="12dp"
+                android:elevation="4dp"
+                style="?android:attr/borderlessButtonStyle" />
+
+        </LinearLayout>
+
+        <!-- ✅ Footer info for current session -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CareerPath • Add Job Form"
+                android:textColor="#999"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Session: Arsieruuu • UTC 2025-07-08 16:29:07"
+                android:textColor="#ccc"
+                android:textSize="10sp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

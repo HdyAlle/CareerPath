@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/Tools">
 
     <application
         android:allowBackup="true"
@@ -42,6 +42,18 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.Careerpath">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- ✅ Add AddJobActivity untuk + button navigation - UTC: 2025-07-08 16:20:42 -->
+        <activity
+            android:name=".activities.AddJobActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Careerpath"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />

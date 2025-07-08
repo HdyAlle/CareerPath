@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- ✅ Pressed state untuk user Arsieruuu - UTC: 16:43:49 -->
     <item android:state_pressed="true">
         <shape android:shape="oval">
             <solid android:color="@color/button_primary_pressed"/>
-            <stroke android:width="3dp" android:color="@color/white"/>
         </shape>
     </item>
-
-    <!-- ✅ Normal state -->
     <item>
         <shape android:shape="oval">
             <solid android:color="@color/blue_primary"/>
-            <stroke android:width="3dp" android:color="@color/white"/>
         </shape>
     </item>
-
 </selector>

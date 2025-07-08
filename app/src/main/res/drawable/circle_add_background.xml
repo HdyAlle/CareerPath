@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- ✅ Primary blue background untuk FAB - UTC: 2025-07-08 16:35:11 -->
+    <solid android:color="@color/fab_background"/>
+
+    <!-- ✅ White border untuk contrast -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/fab_icon"/>
+
+    <!-- ✅ Size untuk proper circle shape -->
+    <size
+        android:width="56dp"
+        android:height="56dp"/>
+</shape>

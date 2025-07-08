@@ -11,16 +11,15 @@ import androidx.core.content.ContextCompat;
 
 /**
  * Custom Bottom Navigation View for CareerPath App.
- *
- * - Letakkan <com.example.careerpath.BottomNav .../> di layout utama (misal: main_activity.xml)
- * - Di MainActivity, gunakan bottomNav.setOnMenuSelectedListener((menuId) -> ...)
+ * Updated: 2025-07-08 16:22:48 UTC - Current User: Arsieruuu
  */
 public class BottomNav extends FrameLayout {
 
     public static final int MENU_HOME = 0;
     public static final int MENU_SEARCH = 1;
-    public static final int MENU_MESSAGE = 2;
-    public static final int MENU_PROFILE = 3;
+    public static final int MENU_ADD = 2; // ✅ NEW: Add Job button
+    public static final int MENU_MESSAGE = 3;
+    public static final int MENU_PROFILE = 4;
 
     private ImageView navHome, navSearch, navMessage, navProfile, navAdd;
     private OnMenuSelectedListener menuSelectedListener;
@@ -54,37 +53,72 @@ public class BottomNav extends FrameLayout {
         navAdd = findViewById(R.id.nav_add);
 
         setupListeners();
+        setupAddButtonStyle();
     }
 
     private void setupListeners() {
         navHome.setOnClickListener(v -> {
-            if (menuSelectedListener != null) menuSelectedListener.onMenuSelected(MENU_HOME);
+            if (menuSelectedListener != null) {
+                menuSelectedListener.onMenuSelected(MENU_HOME);
+            }
         });
+
         navSearch.setOnClickListener(v -> {
-            if (menuSelectedListener != null) menuSelectedListener.onMenuSelected(MENU_SEARCH);
+            if (menuSelectedListener != null) {
+                menuSelectedListener.onMenuSelected(MENU_SEARCH);
+            }
         });
+
         navMessage.setOnClickListener(v -> {
-            if (menuSelectedListener != null) menuSelectedListener.onMenuSelected(MENU_MESSAGE);
+            if (menuSelectedListener != null) {
+                menuSelectedListener.onMenuSelected(MENU_MESSAGE);
+            }
         });
+
         navProfile.setOnClickListener(v -> {
-            if (menuSelectedListener != null) menuSelectedListener.onMenuSelected(MENU_PROFILE);
+            if (menuSelectedListener != null) {
+                menuSelectedListener.onMenuSelected(MENU_PROFILE);
+            }
         });
+
+        // ✅ ADD BUTTON: Navigate to AddJobActivity - User: Arsieruuu
         navAdd.setOnClickListener(v -> {
-            // TODO: Aksi tombol Add
+            if (menuSelectedListener != null) {
+                menuSelectedListener.onMenuSelected(MENU_ADD);
+            }
+            animateAddButton();
         });
     }
 
-    /**
-     * Listener untuk dipanggil saat menu dipilih.
-     */
+    private void setupAddButtonStyle() {
+        if (navAdd != null) {
+            navAdd.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.circle_add_background));
+            navAdd.setColorFilter(ContextCompat.getColor(getContext(), android.R.color.white));
+            navAdd.setElevation(8f);
+        }
+    }
+
+    private void animateAddButton() {
+        if (navAdd != null) {
+            navAdd.animate()
+                    .scaleX(0.9f)
+                    .scaleY(0.9f)
+                    .setDuration(100)
+                    .withEndAction(() -> {
+                        navAdd.animate()
+                                .scaleX(1.0f)
+                                .scaleY(1.0f)
+                                .setDuration(100)
+                                .start();
+                    })
+                    .start();
+        }
+    }
+
     public void setOnMenuSelectedListener(OnMenuSelectedListener listener) {
         this.menuSelectedListener = listener;
     }
 
-    /**
-     * Set active menu (ubah warna icon sesuai menuId)
-     * @param menuId use one of: MENU_HOME, MENU_SEARCH, MENU_MESSAGE, MENU_PROFILE
-     */
     public void setActiveMenu(int menuId) {
         int colorActive = ContextCompat.getColor(getContext(), R.color.blue_active);
         int colorInactive = ContextCompat.getColor(getContext(), R.color.gray_inactive);
@@ -108,5 +142,7 @@ public class BottomNav extends FrameLayout {
                 navProfile.setColorFilter(colorActive);
                 break;
         }
+
+        setupAddButtonStyle();
     }
 }
