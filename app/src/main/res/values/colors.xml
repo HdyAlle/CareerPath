@@ -4,4 +4,19 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_active">#0056D6</color>
     <color name="gray_inactive">#8E98A7</color>
+    <color name="blue_primary">#2E5BFF</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="light_gray_circle">#E8E8E8</color>
+    <color name="gray_text">#666666</color>
+    <color name="tab_background">#F0F0F0</color>
+    <color name="map_background">#E3F2FD</color>
+    <color name="custom_blue">#1E88E5</color>
+    <color name="custom_green">#43A047</color>
+    <color name="blue_secondary">#2E5BFF</color>
+    <color name="accent_yellow">#FFC043</color>
+    <color name="blue_light">#E3F2FD</color>
+    <color name="yellow_light">#FFF9C4</color>
+    <color name="dark_text">#222222</color>
+    <color name="red_accent">#FF5722</color>
+    <color name="success_green">#4CAF50</color>
 </resources>

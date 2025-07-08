@@ -15,7 +15,7 @@ import com.example.careerpath.fragments.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNav bottomNav;
-    private int lastMenuId = BottomNav.MENU_HOME; // Tambahkan ini
+    private int lastMenuId = BottomNav.MENU_HOME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,22 +63,18 @@ public class MainActivity extends AppCompatActivity {
 
     // Method bantu untuk mengganti fragment di fragment_container dengan animasi
     private void showFragment(Fragment fragment, int menuId) {
-        // Tentukan arah animasi: jika ke kanan (menu selanjutnya), gunakan slide kanan
         int enterAnim, exitAnim, popEnterAnim, popExitAnim;
         if (menuId > lastMenuId) {
-            // Geser ke kiri (next menu)
             enterAnim = R.anim.slide_in_right;
             exitAnim = R.anim.slide_out_left;
             popEnterAnim = R.anim.slide_in_left;
             popExitAnim = R.anim.slide_out_right;
         } else if (menuId < lastMenuId) {
-            // Geser ke kanan (prev menu)
             enterAnim = R.anim.slide_in_left;
             exitAnim = R.anim.slide_out_right;
             popEnterAnim = R.anim.slide_in_right;
             popExitAnim = R.anim.slide_out_left;
         } else {
-            // Tetap, tidak ada animasi
             enterAnim = exitAnim = popEnterAnim = popExitAnim = 0;
         }
         lastMenuId = menuId;
