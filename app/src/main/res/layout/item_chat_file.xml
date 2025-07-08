@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="start"
+    android:padding="4dp">
+
+    <!-- Profile Image -->
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/sample_photo"
+        android:background="@drawable/circle_white_bg"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="48dp">
+
+        <!-- File Bubble -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_file_message"
+            android:padding="12dp"
+            android:elevation="1dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:minWidth="200dp">
+
+            <!-- File Icon -->
+            <ImageView
+                android:id="@+id/iv_file_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_pdf"
+                android:background="@drawable/circle_red_bg"
+                android:padding="8dp"
+                android:layout_marginEnd="12dp"/>
+
+            <!-- File Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_file_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jamet - CV - UI UX Designer.PDF"
+                    android:textColor="#222"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:ellipsize="middle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="887 KB PDF"
+                    android:textColor="#666"
+                    android:textSize="11sp"
+                    android:layout_marginTop="2dp"/>
+
+            </LinearLayout>
+
+            <!-- More Options -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_more"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Timestamp -->
+        <TextView
+            android:id="@+id/tv_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="08:36 am"
+            android:textColor="#999"
+            android:textSize="11sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -35,5 +35,17 @@
         <activity
             android:name=".JobDetailFullActivity" />
         <activity android:name=".JobApplicationActivity"/>
+
+        <!-- Add ChatActivity untuk room chat feature -->
+        <activity
+            android:name=".activities.ChatActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Careerpath">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
     </application>
 </manifest>
