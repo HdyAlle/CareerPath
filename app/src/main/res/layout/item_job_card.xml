@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/job_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="3dp"
+    android:layout_marginBottom="16dp"
+    android:backgroundTint="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header with company logo, job title, and bookmark -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Company Logo -->
+            <ImageView
+                android:id="@+id/iv_company_logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_google"
+                android:contentDescription="Company Logo"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- Job title and company info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:id="@+id/tv_job_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UI/UX Designer"
+                    android:textStyle="bold"
+                    android:textColor="#222"
+                    android:textSize="16sp"/>
+                
+                <TextView
+                    android:id="@+id/tv_company_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Google inc • California, USA"
+                    android:textColor="#8E98A7"
+                    android:textSize="13sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Bookmark button -->
+            <ImageView
+                android:id="@+id/iv_bookmark"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_bookmark"
+                android:contentDescription="Bookmark"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                app:tint="#B0B4C2" />
+        </LinearLayout>
+
+        <!-- Job tags section -->
+        <LinearLayout
+            android:id="@+id/ll_job_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="14dp">
+
+            <TextView
+                android:id="@+id/tv_tag_design"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_tag"
+                android:text="Design"
+                android:textColor="#8E98A7"
+                android:gravity="center"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textSize="13sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_tag_full_time"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_tag"
+                android:text="Full time"
+                android:textColor="#8E98A7"
+                android:gravity="center"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textSize="13sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_tag_senior"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_tag"
+                android:text="Senior designer"
+                android:textColor="#8E98A7"
+                android:gravity="center"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Bottom section with timestamp and salary -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <!-- Timestamp -->
+            <TextView
+                android:id="@+id/tv_posted_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25 minutes ago"
+                android:textColor="#B0B4C2"
+                android:textSize="12sp"/>
+
+            <!-- Spacer -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <!-- Salary -->
+            <TextView
+                android:id="@+id/tv_salary_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$15K"
+                android:textColor="#222"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            
+            <TextView
+                android:id="@+id/tv_salary_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/Mo"
+                android:textColor="#B0B4C2"
+                android:textSize="12sp"
+                android:layout_marginStart="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
