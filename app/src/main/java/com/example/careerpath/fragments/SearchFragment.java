@@ -25,14 +25,15 @@ public class SearchFragment extends Fragment {
     private Button btnSeniorDesigner, btnDesigner, btnFullTime;
     private ImageButton filterButton;
     private LinearLayout jobListContainer;
-    private CardView jobCard;
-    private ImageView bookmarkButton;
+    private CardView jobCard, jobCard2;
+    private ImageView bookmarkButton, bookmarkButton2;
 
     // Filter states
     private boolean isSeniorDesignerSelected = true;
     private boolean isDesignerSelected = false;
     private boolean isFullTimeSelected = false;
     private boolean isBookmarked = false;
+    private boolean isBookmarked2 = false;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -66,6 +67,10 @@ public class SearchFragment extends Fragment {
         // Job card elements (from included layout)
         jobCard = view.findViewById(R.id.job_card);
         bookmarkButton = view.findViewById(R.id.iv_bookmark);
+        
+        // Second job card elements
+        jobCard2 = view.findViewById(R.id.job_card_2);
+        bookmarkButton2 = view.findViewById(R.id.iv_bookmark_2);
     }
 
     private void setupClickListeners() {
@@ -104,10 +109,32 @@ public class SearchFragment extends Fragment {
             });
         }
 
+        // Second job card click
+        if (jobCard2 != null) {
+            jobCard2.setOnClickListener(v -> {
+                Intent intent = new Intent(getContext(), JobDetailActivity.class);
+                // Pass Microsoft job data
+                intent.putExtra("job_title", "Product Designer");
+                intent.putExtra("company_name", "Microsoft");
+                intent.putExtra("location", "Seattle, USA");
+                intent.putExtra("salary", "$18K/Mo");
+                intent.putExtra("job_type", "Remote");
+                intent.putExtra("experience", "Mid Level");
+                startActivity(intent);
+            });
+        }
+
         // Bookmark button click
         if (bookmarkButton != null) {
             bookmarkButton.setOnClickListener(v -> {
-                toggleBookmark();
+                toggleBookmark(1);
+            });
+        }
+
+        // Second bookmark button click
+        if (bookmarkButton2 != null) {
+            bookmarkButton2.setOnClickListener(v -> {
+                toggleBookmark(2);
             });
         }
     }
@@ -147,19 +174,35 @@ public class SearchFragment extends Fragment {
         }
     }
 
-    private void toggleBookmark() {
-        // Toggle bookmark state
-        isBookmarked = !isBookmarked;
-        
-        if (bookmarkButton != null) {
-            if (isBookmarked) {
-                // Add bookmark - blue color
-                bookmarkButton.setColorFilter(getResources().getColor(R.color.blue_active, null));
-                Toast.makeText(getContext(), "Job bookmarked", Toast.LENGTH_SHORT).show();
-            } else {
-                // Remove bookmark - gray color
-                bookmarkButton.setColorFilter(getResources().getColor(R.color.gray_inactive, null));
-                Toast.makeText(getContext(), "Bookmark removed", Toast.LENGTH_SHORT).show();
+    private void toggleBookmark(int cardNumber) {
+        // Toggle bookmark state for specified card
+        if (cardNumber == 1) {
+            isBookmarked = !isBookmarked;
+            
+            if (bookmarkButton != null) {
+                if (isBookmarked) {
+                    // Add bookmark - blue color
+                    bookmarkButton.setColorFilter(getResources().getColor(R.color.blue_active, null));
+                    Toast.makeText(getContext(), "Google job bookmarked", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Remove bookmark - gray color
+                    bookmarkButton.setColorFilter(getResources().getColor(R.color.gray_inactive, null));
+                    Toast.makeText(getContext(), "Google job bookmark removed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        } else if (cardNumber == 2) {
+            isBookmarked2 = !isBookmarked2;
+            
+            if (bookmarkButton2 != null) {
+                if (isBookmarked2) {
+                    // Add bookmark - blue color
+                    bookmarkButton2.setColorFilter(getResources().getColor(R.color.blue_active, null));
+                    Toast.makeText(getContext(), "Microsoft job bookmarked", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Remove bookmark - gray color
+                    bookmarkButton2.setColorFilter(getResources().getColor(R.color.gray_inactive, null));
+                    Toast.makeText(getContext(), "Microsoft job bookmark removed", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
